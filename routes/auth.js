@@ -10,7 +10,7 @@ const router = express.Router();
  * @route POST /api/auth/signup
  */
 router.post("/signup", async (req, res) => {
-  const { name, email, password } = req.body;
+  const { name, email, password, phone, company, agency } = req.body;
 
   try {
     let user = await User.findOne({ email });
@@ -25,6 +25,9 @@ router.post("/signup", async (req, res) => {
       name,
       email,
       password: hashedPassword,
+      phone,
+      company,
+      agency,
     });
 
     await user.save();
@@ -39,6 +42,9 @@ router.post("/signup", async (req, res) => {
         id: user.id,
         name: user.name,
         email: user.email,
+        phone: user.phone,
+        company: user.company,
+        agency: user.agency,
       },
     });
   } catch (err) {

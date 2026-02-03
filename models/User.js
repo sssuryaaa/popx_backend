@@ -15,6 +15,18 @@ const UserSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
+    phone: {
+      type: String,
+      required: true,
+    },
+    company: {
+      type: String,
+      required: true,
+    },
+    agency: {
+      type: String,
+      required: true,
+    },
   },
   { timestamps: true },
 );
