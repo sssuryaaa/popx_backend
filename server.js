@@ -8,7 +8,7 @@ connectDB();
 
 app.use(
   cors({
-    origin: "https://your-frontend.vercel.app",
+    origin: "https://popxfrontend.netlify.app",
     credentials: true,
   }),
 );
